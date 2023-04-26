@@ -90,7 +90,43 @@ namespace WpfApp1
         private void wart1_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton radioButton =(RadioButton)sender;
-            int ile=radioButton.te
+            int ile = int.Parse(radioButton.Content.ToString());
+            wylosuj(ile);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            string jezyki = "";
+            if(Cszarp.IsChecked == true)
+            {
+                jezyki += Cszarp.Content+", ";
+            }
+            if(Cplus.IsChecked == true)
+            {
+                jezyki += Cplus.Content+", ";
+            }
+            if(TypeScript.IsChecked == true)
+            {
+                jezyki += TypeScript.Content + ", ";
+            }
+            if(Java.IsChecked == true)
+            {
+                jezyki +=Java.Content + ", ";
+
+            }
+            if(Pehap.IsChecked == true)
+            {
+                jezyki += Pehap.Content + ", ";
+            }
+            tekstJezyki.Text = jezyki;
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Window okno = new Window1();
+            //okno.ShowDialog();
+            okno.Show();
+
         }
     }
 }

@@ -6,53 +6,76 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <Menu>
-            <MenuItem Header="F_ormatowanie">
-                <MenuItem 
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <StackPanel>
+            <Menu>
+                <MenuItem Header="F_ormatowanie">
+                    <MenuItem 
                     Header="dzien/noc"
                     IsCheckable="True"
                     Checked="MenuItem_Checked"
                     Unchecked="MenuItem_Unchecked"/>
-            </MenuItem>
-            <MenuItem Header="O _programie">
-                <MenuItem Header="Autor" Click="MenuItem_Click"/>
-                <MenuItem Header="Wersja" Click="MenuItem_Click_1"/>
-            </MenuItem>
-            <MenuItem Header="Edycja">
-                <MenuItem Command="ApplicationCommands.Copy"/>
-                <MenuItem Command="ApplicationCommands.Cut"/>
-            </MenuItem>
-        </Menu>
-        <GroupBox Header="Miesiące" Margin="20">
-            <StackPanel>
-            <TextBlock x:Name="tekst3">
+                </MenuItem>
+                <MenuItem Header="O _programie">
+                    <MenuItem Header="Autor" Click="MenuItem_Click"/>
+                    <MenuItem Header="Wersja" Click="MenuItem_Click_1"/>
+                </MenuItem>
+                <MenuItem Header="Edycja">
+                    <MenuItem Command="ApplicationCommands.Copy"/>
+                    <MenuItem Command="ApplicationCommands.Cut"/>
+                </MenuItem>
+            </Menu>
+            <GroupBox Header="Miesiące" Margin="20">
+                <StackPanel>
+                    <TextBlock x:Name="tekst3">
             Wybierz miesiąc
-        </TextBlock>
-        <ComboBox x:Name="miesiac" HorizontalAlignment="Left">
-            <ComboBoxItem>styczeń</ComboBoxItem>
-            <ComboBoxItem>luty</ComboBoxItem>
-            <ComboBoxItem>marzec</ComboBoxItem>
-            <ComboBoxItem>kwiecień</ComboBoxItem>
-        </ComboBox>
-                <Button Click="Button_Click">Przepisz</Button>
-            </StackPanel>
-        </GroupBox>
-        <GroupBox Header="pytanie">
-            <StackPanel>
-                <TextBlock>
+                    </TextBlock>
+                    <ComboBox x:Name="miesiac" HorizontalAlignment="Left">
+                        <ComboBoxItem>styczeń</ComboBoxItem>
+                        <ComboBoxItem>luty</ComboBoxItem>
+                        <ComboBoxItem>marzec</ComboBoxItem>
+                        <ComboBoxItem>kwiecień</ComboBoxItem>
+                    </ComboBox>
+                    <Button Click="Button_Click">Przepisz</Button>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="pytanie">
+                <StackPanel>
+                    <TextBlock>
                     Ile liczb chcesz losować?
-                </TextBlock>
-                <RadioButton GroupName="liczby" x:Name="wart1"
-                             Checked="wart1_Checked">5</RadioButton>
-                <RadioButton GroupName="liczby" x:Name="wart2"
-                             Checked="wart1_Checked">10</RadioButton>
-                <RadioButton GroupName="liczby" x:Name="wart3"
-                             Checked="wart1_Checked">15</RadioButton>
-                <Button Click="Button_Click_1">Wylosuj</Button>
-            </StackPanel>
-            
-            
-        </GroupBox>
-    </StackPanel>
+                    </TextBlock>
+                    <RadioButton GroupName="liczby" x:Name="wart1"
+                             Checked="wart1_Checked" Content="5"></RadioButton>
+                    <RadioButton GroupName="liczby" x:Name="wart2"
+                             Checked="wart1_Checked" Content="10"></RadioButton>
+                    <RadioButton GroupName="liczby" x:Name="wart3"
+                             Checked="wart1_Checked" Content="15"></RadioButton>
+                    <Button Click="Button_Click_1">Wylosuj</Button>
+                    <RadioButton GroupName="parzystosc" 
+                             x:Name="parzyste">parzyste</RadioButton>
+                    <RadioButton GroupName="parzystosc" 
+                             x:Name="nieparzyste">nieparzyste</RadioButton>
+                </StackPanel>
+
+
+            </GroupBox>
+
+            <TextBlock>Kolejna grupa</TextBlock>
+            <GroupBox Header="inne pytania">
+                <StackPanel>
+                    <TextBlock>Wybierz jakie znasz języki programowania
+                    </TextBlock>
+                    <CheckBox Content="C#" x:Name="Cszarp"/>
+                    <CheckBox Content="C++" x:Name="Cplus"/>
+                    <CheckBox Content="Java" x:Name="Java"/>
+                    <CheckBox Content="PHP" x:Name="Pehap"/>
+                    <CheckBox Content="TS" x:Name="TypeScript"/>
+                    <Button Click="Button_Click_2">Przepisz</Button>
+
+                    <TextBlock x:Name="tekstJezyki"/>
+                    <Button Click="Button_Click_3">Otwórz nowe okno</Button>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
 </Window>
