@@ -11,7 +11,7 @@
             <MenuItem Header="F_ormatowanie">
                 <MenuItem 
                     Header="dzien/noc"
-                    IsChecked="True"
+                    IsCheckable="True"
                     Checked="MenuItem_Checked"
                     Unchecked="MenuItem_Unchecked"/>
             </MenuItem>
@@ -19,9 +19,40 @@
                 <MenuItem Header="Autor" Click="MenuItem_Click"/>
                 <MenuItem Header="Wersja" Click="MenuItem_Click_1"/>
             </MenuItem>
+            <MenuItem Header="Edycja">
+                <MenuItem Command="ApplicationCommands.Copy"/>
+                <MenuItem Command="ApplicationCommands.Cut"/>
+            </MenuItem>
         </Menu>
-        <TextBlock x:Name="tekst3">
-            Jakis teksts
+        <GroupBox Header="Miesiące" Margin="20">
+            <StackPanel>
+            <TextBlock x:Name="tekst3">
+            Wybierz miesiąc
         </TextBlock>
+        <ComboBox x:Name="miesiac" HorizontalAlignment="Left">
+            <ComboBoxItem>styczeń</ComboBoxItem>
+            <ComboBoxItem>luty</ComboBoxItem>
+            <ComboBoxItem>marzec</ComboBoxItem>
+            <ComboBoxItem>kwiecień</ComboBoxItem>
+        </ComboBox>
+                <Button Click="Button_Click">Przepisz</Button>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="pytanie">
+            <StackPanel>
+                <TextBlock>
+                    Ile liczb chcesz losować?
+                </TextBlock>
+                <RadioButton GroupName="liczby" x:Name="wart1"
+                             Checked="wart1_Checked">5</RadioButton>
+                <RadioButton GroupName="liczby" x:Name="wart2"
+                             Checked="wart1_Checked">10</RadioButton>
+                <RadioButton GroupName="liczby" x:Name="wart3"
+                             Checked="wart1_Checked">15</RadioButton>
+                <Button Click="Button_Click_1">Wylosuj</Button>
+            </StackPanel>
+            
+            
+        </GroupBox>
     </StackPanel>
 </Window>

@@ -41,13 +41,56 @@ namespace WpfApp1
         private void MenuItem_Checked(object sender, RoutedEventArgs e)
         {
             this.Background = Brushes.Black;
-            tekst3.Foreground = Brushes.White;
+            //tekst3.Foreground = Brushes.White;
             //tekst3.Foreground= Brushes.White;
         }
 
         private void MenuItem_Unchecked(object sender, RoutedEventArgs e)
         {
+            this.Foreground = Brushes.White;
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string mc= miesiac.Text;
+            MessageBox.Show("wybrano miesiąc " + mc);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            int ile = 0;
+            if (wart1.IsChecked == true)
+            {
+                ile = 5;
+            }
+            else if(wart2.IsChecked == true)
+            {
+                ile = 10;
+            }
+            else
+            {
+                ile = 15;
+            }
+            
+            wylosuj(ile);
+        }
+        private void wylosuj(int n)
+        {
+            var random = new Random();
+            string tekstlosowy = "";
+            for(int i = 0; i < n; i++)
+            {
+                int x = random.Next(100);
+                tekstlosowy = tekstlosowy + x.ToString()+", ";
+            }
+            MessageBox.Show(tekstlosowy);
+
+        }
+
+        private void wart1_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton radioButton =(RadioButton)sender;
+            int ile=radioButton.te
         }
     }
 }
